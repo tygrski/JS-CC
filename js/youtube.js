@@ -1,27 +1,22 @@
-// {
-//     let myName = "Travis";
-//     console.log(`My name is ${myName}`);
-   
-// }
-
-// {
-//     let test = " lorem ipsum\
-//      bla\
-//      blahh"
-//      console.log(test.length);
-// }
-
+// functions and objects
 {
-let content = "     TODAY will we be talking about strings"
-let search1 = "string";
+    let position = {
+        x: 10,
+        y: 20,
+        print: function(){
+            console.log( `x: ${this.x}, y: ${this.y}`);
+        }
+         
+    }
 
-console.log(content.substring(6, 20));
-console.log(content.substr(6,20));
-console.log(content.slice(6,20));
-console.log(content.toUpperCase());
+    let myPosition = position;
+    
+    console.log(position);
+    console.log(myPosition);
 
-console.log(content.trim());
-console.log(content.trimLeft());
-console.log(content.split(""));
+    myPosition.x = 15;
+
+    console.log(position);
+    console.log(myPosition);
+    position.print();
 }
-
