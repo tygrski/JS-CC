@@ -167,13 +167,82 @@
 
 // ===========================================
 // nested loops
+// {
+//     let d = document.getElementById("destination");
+//   for (let i = 0; i < 10; i++) {
+//     for( let k = i; k >= 0; k--){
+//         d.append(k + " ");
+//     }
+//     var br = document.createElement('br');
+//     d.appendChild(br);
+//   }
+// }synthesizeakai
+
+//========= arrays =================
+// {
+
+//     let grades = [];
+//     grades[0] = 12;
+//     grades[1] = 43;
+//     grades[2] = 2;
+//     console.log(grades);
+
+//     for (i = 0; i< grades.length; i ++) {
+//         console.log(grades[i]);
+//     }
+
+// }
+
+// ===Iterate through arrays
+
+// {
+//   let grades = [15, 4, 4, 66, 7, 9, 33, 4, 6, 43, 43];
+ 
+
+//   let largest = grades[0];
+
+//   for (i = 0; i < grades.length; i++) {
+//     if (grades[i] > largest) {
+//       // found
+//       largest = grades [i]
+//     }
+//   }
+// console.log(largest);
+// }
+
+// ====== calculating average
+// {
+//     let grades = [15, 4, 4, 66, 7, 9, 33, 4, 6, 43, 43, 43];
+   
+//     grades.length = 30;
+//     grades[34] = 40;
+  
+//     let count = 0;
+//     let total = 0;
+    
+//     for (i = 0; i < grades.length; i++) {
+//       if(grades[i] !== undefined) {
+//         // legit value
+//         count++
+//         total += grades[i]
+//       }
+//     }
+//  let avg = total /count;
+//  console.log(avg);
+//   }
+
+// how to fill array with usr input
+
 {
-    let d = document.getElementById("destination");
-  for (let i = 0; i < 10; i++) {
-    for( let k = i; k >= 0; k--){
-        d.append(k + " ");
+    let grades = [];
+
+    while(true){
+        let input = prompt("add a grade");
+        if( input === "q" || input === null ){
+            break;
+        }
+
+        grades.push(Number(input));
+        console.log(grades);
     }
-    var br = document.createElement('br');
-    d.appendChild(br);
-  }
 }
