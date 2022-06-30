@@ -227,22 +227,72 @@
 //         total += grades[i]
 //       }
 //     }
-//  let avg = total /count;
+//  let avg = total /count;1
 //  console.log(avg);
 //   }
 
 // how to fill array with usr input
 
+// {
+//     let grades = [];
+
+//     while(true){
+//         let input = prompt("add a grade");
+//         if( input === "q" || input === null ){
+//             break;
+//         }
+
+//         grades.push(Number(input));
+//         console.log(grades);
+//     }
+// }
+
+
+// ==== Array Methods from user input ========
+
+// {
+//     let grades = [];
+
+//     while(true) {
+//         let input = prompt("Add a grade");
+//         grades.push(input);
+
+//     }
+// }
+
+// =========== array.fill =====
+// {
+// grades.fill( -1, 0, grades.length);
+// }
+
+// array.forEach
+
+// {
+// let grades = [12, 13, 32, 42, 23];
+// grades.length = 30;
+
+// // for(let i = 0; i < grades.lenght; i++){
+// //     if(grades[i] !== undefined){console.log(grades[i])}
+// // }
+
+//     grades.forEach(function(item, i) {console.log(item, i) });
+// }
+
 {
-    let grades = [];
-
-    while(true){
-        let input = prompt("add a grade");
-        if( input === "q" || input === null ){
-            break;
-        }
-
-        grades.push(Number(input));
-        console.log(grades);
+    let grades =[ [12, 13, 32, 42, 23],
+        [12, 43, 21, 12, 43,12],
+        [43, 12, 43, 12, 45, 12],
+        ];
+  
+        // for(i = 0; i < grades.length; i++){
+        //     for(let k = 0; k < grades[i].length; k++){
+        //         console.log(grades[i][k])
+        //     }
+        // }
+        grades.forEach(function(row){
+            row.forEach(function(column){
+                console.log(column)
+            });
+            console.log('~~~~~')
+        });
     }
-}
