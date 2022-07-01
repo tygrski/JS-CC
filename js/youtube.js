@@ -197,7 +197,6 @@
 
 // {
 //   let grades = [15, 4, 4, 66, 7, 9, 33, 4, 6, 43, 43];
- 
 
 //   let largest = grades[0];
 
@@ -213,13 +212,13 @@
 // ====== calculating average
 // {
 //     let grades = [15, 4, 4, 66, 7, 9, 33, 4, 6, 43, 43, 43];
-   
+
 //     grades.length = 30;
 //     grades[34] = 40;
-  
+
 //     let count = 0;
 //     let total = 0;
-    
+
 //     for (i = 0; i < grades.length; i++) {
 //       if(grades[i] !== undefined) {
 //         // legit value
@@ -246,7 +245,6 @@
 //         console.log(grades);
 //     }
 // }
-
 
 // ==== Array Methods from user input ========
 
@@ -278,21 +276,66 @@
 //     grades.forEach(function(item, i) {console.log(item, i) });
 // }
 
+// {
+//   let grades = [
+//     [12, 13, 32, 42, 23],
+//     [12, 43, 21, 12, 43, 12],
+//     [43, 12, 43, 12, 45, 12],
+//   ];
+
+// for(i = 0; i < grades.length; i++){
+//     for(let k = 0; k < grades[i].length; k++){
+//         console.log(grades[i][k])
+//     }
+// }
+//   grades.forEach(function (row) {
+//     row.forEach(function (column) {
+//       console.log(column);
+//     });
+//     console.log("~~~~~");
+//   });
+// }
+
+//  == Break and Continue ================
+
+// {
+//   let grades = [
+//     [12, 13, 32, 42, 23],
+//     [12, 43, 21, 12, 43, 12, 54, 23, 12],
+//     [43, 12, 43, 12, 45, 12],
+//   ];
+
+//   for (i = 0; i < grades.length; i++) {
+//     for (let k = 0; k < grades[i].length; k++) {
+//       console.log(grades[i][k]);
+//       if(grades[i][k] === 54){
+//         console.log("You found the value")
+//         continue;
+//       }
+//       console.log("doing stuff")   
+//     }
+//     console.log("~~~~~");
+//   }
+// }
+
+
+// Laels for loops =========
 {
-    let grades =[ [12, 13, 32, 42, 23],
-        [12, 43, 21, 12, 43,12],
-        [43, 12, 43, 12, 45, 12],
-        ];
-  
-        // for(i = 0; i < grades.length; i++){
-        //     for(let k = 0; k < grades[i].length; k++){
-        //         console.log(grades[i][k])
-        //     }
-        // }
-        grades.forEach(function(row){
-            row.forEach(function(column){
-                console.log(column)
-            });
-            console.log('~~~~~')
-        });
+  let grades = [
+    [12, 13, 32, 42, 23],
+    [12, 43, 21, 12, 43, 12, 54, 23, 12],
+    [43, 12, 43, 12, 45, 12],
+  ];
+
+  outerLoop: for (i = 0; i < grades.length; i++) {
+    for (let k = 0; k < grades[i].length; k++) {
+      console.log(grades[i][k]);
+      if(grades[i][k] === 54){
+        console.log("You found the value")
+        continue;
+      }
+      console.log("doing stuff")   
     }
+    console.log("~~~~~");
+  }
+}
