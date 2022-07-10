@@ -320,22 +320,90 @@
 
 
 // Laels for loops =========
-{
-  let grades = [
-    [12, 13, 32, 42, 23],
-    [12, 43, 21, 12, 43, 12, 54, 23, 12],
-    [43, 12, 43, 12, 45, 12],
-  ];
+// {
+//   let grades = [
+//     [12, 13, 32, 42, 23],
+//     [12, 43, 21, 12, 43, 12, 54, 23, 12],
+//     [43, 12, 43, 12, 45, 12],
+//   ];
 
-  outerLoop: for (i = 0; i < grades.length; i++) {
-    for (let k = 0; k < grades[i].length; k++) {
-      console.log(grades[i][k]);
-      if(grades[i][k] === 54){
-        console.log("You found the value")
-        continue;
-      }
-      console.log("doing stuff")   
-    }
-    console.log("~~~~~");
-  }
+//   outerLoop: for (i = 0; i < grades.length; i++) {
+//     for (let k = 0; k < grades[i].length; k++) {
+//       console.log(grades[i][k]);
+//       if(grades[i][k] === 54){
+//         console.log("You found the value")
+//         continue outerLoop;
+//       }
+//       console.log("doing stuff")   
+//     }
+//     console.log("~~~~~");  //this code is ingnores with 
+//     //continue outerLoop
+//     // this code is not ignores with a break
+//   }
+// }
+
+//  ==== DATE OBJECTS ==================================
+
+// {
+
+//   var valentine = new Date;
+
+//   console.log(valentine);
+//   // console.log(Date.now()); milise since Unix Epoch
+
+// }
+
+// {
+
+//   // let myDate = new Date();
+//   // let time = Date.now();
+//   // console.log(myDate);
+//   // console.log(time);
+
+//   let start = Date.now();
+//   let x = 0;
+//   for(let i = 0; i < 100000000; i++) {
+//     x = x + i;
+//   }
+//   let end = Date.now();
+//   // calculate time from start to end
+//   let total = end - start;
+//   console.log("Time took: " + total);
+//   console.log(x);
+  
+// }
+
+// ===========================================
+
+// {
+
+//   let before = new Date(2020, 10, 15);
+//   let after = new Date(2020, 10, 20);
+//   let oneDay = 1000 * 60 * 60 * 24; 
+
+//   let days = (after - before) / oneDay;
+//   console.log(days);
+// }
+
+//  ==  Date Functions ==========================
+
+// {
+//   let myDate =  new Date("1888-11-14");
+//   console.group(myDate);
+// }
+
+
+
+// {
+//   let myDate =  new Date(2012, 10, 12);
+//   myDate.setHours(12)
+//   console.group(myDate);
+// }
+
+// ============================
+{
+  let myDate =  new Date(2012, 10, 12);
+ 
+  console.group(myDate.getTimezoneOffset() / 60);
+  console.log(myDate);
 }
