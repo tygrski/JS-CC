@@ -401,9 +401,32 @@
 // }
 
 // ============================
-{
-  let myDate =  new Date(2012, 10, 12);
+// {
+//   let myDate =  new Date(2012, 10, 12);
  
-  console.group(myDate.getTimezoneOffset() / 60);
-  console.log(myDate);
-}
+//   console.group(myDate.getTimezoneOffset() / 60);
+//   console.log(myDate);
+// }
+
+
+// === FUNCTIONS ================================
+
+// {
+
+//     function pow(x, y){
+//     let total = 1;
+//     for(let i = 0; i < y; i++){
+//         total *= x;
+//     }
+//     return total;
+// }
+// console.log(pow(3,3));
+// }
+
+//  ==== Hoisting ===================
+
+// var doStuff = function (){
+//      console.log("hey")
+// }
+
+// doStuff();
