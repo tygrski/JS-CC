@@ -109,6 +109,7 @@ const averageAge = (ageJonas + ageSarah)/2;
 console.log(ageJonas, ageSarah, averageAge);
 
 //====================
+Coding Challenge #1
 // BMI = mass / height ** 2 or BMI = mass / (height * height)
 
 const massMark = 78;
@@ -121,7 +122,7 @@ const BMIJohn = massJohn / (heightJohn * heightJohn);
 const markHigherBMI = BMIMark > BMIJohn;
 console.log(BMIMark, BMIJohn);
 console.log(markHigherBMI);
-*/
+
 
 //  TEMPLATE LITERALS
 
@@ -145,3 +146,49 @@ lines');
 console.log(`String
 multiple
 lines`);
+
+
+//  If - Else Statements ==========
+
+const age = 15;
+const isOldEnough = age >= 18;
+
+if (age >= 18){
+console.log('Sam can drive🚗');
+}else {
+    const yearsLeft = 18 - age;
+    console.log(`Sam is too young . Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 2001;
+let century;
+
+if (birthYear <= 2000){
+    century = 20;
+}else {
+    century =21;
+}
+console.log(century);
+*/
+
+// Coding Challenge #2
+
+// const massMark = 78;
+// const heightMark = 1.69;
+// const massJohn = 92;
+// const heightJohn = 1.95;
+
+const massMark = 95;
+const heightMark = 1.88;
+const massJohn = 85;
+const heightJohn = 1.76;
+
+const BMIMark = massMark / heightMark ** 2
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark,BMIJohn)
+
+if (BMIMark > BMIJohn){
+    console.log(`Mark's BMI is larger  (${BMIMark}) BMI, compared to John's (${BMIJohn}) BMI`)
+}else {
+    console.log(`John's BMI is larger (${BMIJohn}) BMI, compared to Mark's (${BMIMark}) BMI`)
+}
