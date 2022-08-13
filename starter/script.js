@@ -125,4 +125,23 @@ console.log(markHigherBMI);
 
 //  TEMPLATE LITERALS
 
-const 
+const firstName = "Travis";
+const job = 'student';
+const birthYear = 1980;
+currentYear = 2022;
+
+const travis = "I'm " + firstName + ", a " + (currentYear - birthYear) + " year old " + job + " !";
+console.log(travis);
+
+const travisNew = `I'm ${firstName}, a ${currentYear - birthYear} year old ${job} !`;
+console.log(travisNew);
+
+console.log(`Just a string`);
+
+console.log('String with \n\
+multiple \n\
+lines');
+
+console.log(`String
+multiple
+lines`);
