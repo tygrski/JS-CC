@@ -276,7 +276,7 @@ if(favNum === 23){
 
 if(favNum !== 23) console.log('why not pick 23 ?')
 
-*/
+
 
 // Boolean Logic
 
@@ -340,3 +340,93 @@ console.log(`TIE 🏆🏆both averages same`)
 }  else {
     console.log('nobody wins the trophy ☹️')
 }
+
+
+//  Switch Statements
+
+const day = 'saturday';
+
+switch(day) {
+    case 'monday': // day === 'monday'
+        console.log('Plan course');
+        console.log('Go to coding meetup');
+        break; // makes code stop running
+    case 'tuesday':
+        console.log('prep resume');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('write code')
+        break;
+    case 'friday':
+        console.log('watch vids');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend');
+        break;
+    default: 
+        console.log('not a valid date')
+}
+
+if(day === 'monday'){
+    console.log('Plan course');
+        console.log('Go to coding meetup');
+} else if(day === 'tuesday'){
+    console.log('prep resume');
+} else if(day === 'wednesday' || day === 'thursday'){
+    console.log('write code')
+} else if (day === 'friday'){
+    console.log('watch vids');
+} else if(day === 'saturday' || day === 'sunday'){
+    console.log('Enjoy the weekend');
+} else {
+    console.log('not a valid day')
+} 
+
+*/
+
+//  Statements and Expessions
+// expression produce a value
+// statements translates the actions
+3 + 4 // expression
+1991 //expression
+true && false && !false // expression
+
+//staement but no value produced
+//the if statement is a statement
+if(23 > 10){ 
+    const str = '23 is bigger'; //expression
+}
+
+// template literals can only contain expressions, no statements
+const me = 'travis'
+console.log(`My name is ${me}, I am ${2022 - 1980} years old`)
+
+// Conditional ( Terany Operator) Operator
+
+const age = 42;
+age >= 21 ? console.log("I'd like to drink a wine🍷") : console.log("I'd like to drink a water💦");
+
+const drink = age >= 21 ? 'wine' : 'water';
+console.log(drink);
+
+let drink2;
+
+if(age >= 21){
+    drink2 = 'wine'
+} else {
+    drink2 = 'water'
+}
+console.log('drink2 is ', drink2);
+
+console.log(` I like to drink ${drink}`);
+
+
+// Section1 - Coding Challenge #3
+ const bill = 275;
+// const bill = 40;
+// const bill = 430;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(`the bill was ${bill}, the tip was ${tip}, the total was ${bill + tip}`);
+
