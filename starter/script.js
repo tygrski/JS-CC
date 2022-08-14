@@ -169,7 +169,7 @@ if (birthYear <= 2000){
     century =21;
 }
 console.log(century);
-*/
+
 
 // Coding Challenge #2
 
@@ -191,4 +191,152 @@ if (BMIMark > BMIJohn){
     console.log(`Mark's BMI is larger  (${BMIMark}) BMI, compared to John's (${BMIJohn}) BMI`)
 }else {
     console.log(`John's BMI is larger (${BMIJohn}) BMI, compared to Mark's (${BMIMark}) BMI`)
+}
+
+
+// Conversion and Coersion
+
+// type conversion
+const inputYear = '1991';
+// Number() to convert Str to Num
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Travis'));
+console.log(typeof NaN);// nAn is still a Num datatype
+
+console.log(String(23), 23);
+
+// type coercion
+console.log('I am ' + 23 + ' years old');//23 convertd to a str
+console.log('23' - '10' - 3);
+console.log('23' * '2');
+console.log('22' / '2');  
+
+let n = '1' + 1;// = '11'
+n = n - 1;// '11' - 1 = 10
+console.log(n); 
+
+console.log('10' - '4' - '3' - 2 + '5')//15
+// '10' - '4' = 6, 6 - '3' = 3
+// 3 - 2 = 1,  1 + '5' = 15
+
+
+//  Truthy & Falsy Values  ===================
+
+// 5 Falsy Values: 0, '', undefined, null, Nan
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Travis"));
+console.log(Boolean(""));
+console.log(Boolean(" "));
+console.log(Boolean({}));
+// const money = 0;
+// 0 if a Falsy value, 0 converted to false
+ const money = 100;
+if(money) {
+    console.log("Don't spend it all")
+} else {
+    console.log('You should get a job')
+}
+
+// let height;
+// no value yet, thus undefined
+//undefined is a falsy value
+// let height = 0 //also falsy
+let height = 13;
+if(height) {
+    console.log('Height is defined')
+} else {
+    console.log('Height is undefined')
+}
+
+
+//  Equality Operators
+const age = 18;
+//const age = '18';
+
+if(age === 18)console.log('you are adult(strict)');
+
+if(age == 18)console.log('you are adult (loose)');
+
+const favNum = Number(prompt("What's your favorite number"));
+console.log(favNum, typeof favNum);
+
+if(favNum === 23){
+    console.log('23 is the num');
+} else if(favNum == 7){
+    console.log('7 is cool');
+} else if(favNum === 9){
+ console.log(' 9 is great')
+} else{
+    console.log('num is not 23, 9, or 7');
+}
+
+if(favNum !== 23) console.log('why not pick 23 ?')
+
+*/
+
+// Boolean Logic
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true;// B
+
+console.log('and',hasDriversLicense && hasGoodVision);
+console.log('or',hasDriversLicense || hasGoodVision);
+console.log('not', !hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+if(hasDriversLicense && hasGoodVision){
+    console.log('You can drive')
+} else {
+    console.log('not old enough')
+}
+
+const isTired = false; //c
+
+console.log('or',hasDriversLicense || hasGoodVision || isTired);
+console.log('and',hasDriversLicense &&hasGoodVision && isTired);//is tired opposite value
+
+if(hasDriversLicense && hasGoodVision && !isTired){
+    console.log('You can drive')
+} else {
+    console.log('not old enough')
+}
+
+//  Section 2 -Coding Challenge 3
+
+// const dolphinsAvg = (96 + 108 + 89) / 3;
+// const koalasAvg = (88 + 91 + 110) / 3;
+// const koalasAvg = ((96 + 108 + 89) / 3);
+
+// console.log('dolph', dolphinsAvg);
+// console.log('koala', koalasAvg);
+
+// if(dolphinsAvg > koalasAvg) {
+//     console.log(`Dolphins win 🏆! Avg Score of ${dolphinsAvg}`);
+// } else if(koalasAvg > dolphinsAvg){
+//     console.log(`Koala win 🏆 !, avg ascore of ${koalasAvg}`);
+// } else if (koalasAvg === dolphinsAvg){
+// console.log(`TIE 🏆🏆both averages same`)
+// } else {
+//     console.log('incorrect data input')
+// }
+
+//Bonus 1
+const dolphinsAvg = (97 + 112 + 101) / 3;
+const koalasAvg = (109 + 95 + 106) / 3;
+console.log(dolphinsAvg, koalasAvg);
+const minimumAvg = 100;
+
+if(dolphinsAvg > koalasAvg && dolphinsAvg >= minimumAvg) {
+    console.log(`Dolphins win 🏆! Avg Score of ${dolphinsAvg}`);
+} else if(koalasAvg > dolphinsAvg && koalasAvg >= minimumAvg){
+    console.log(`Koala win 🏆 !, avg ascore of ${koalasAvg}`);
+} else if (koalasAvg === dolphinsAvg && koalasAvg >= 100 && koalasAvg >= 100){
+console.log(`TIE 🏆🏆both averages same`)
+}  else {
+    console.log('nobody wins the trophy ☹️')
 }
