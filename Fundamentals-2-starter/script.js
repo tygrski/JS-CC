@@ -189,7 +189,7 @@ console.log(age1, age2, age3);
 
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
-*/
+
 //  Basic ARRAY Methods
 
 const friends = ["Michael", "Steven", "Peter"];
@@ -244,17 +244,125 @@ const tip = [calcTip(bill[0]), calcTip(bill[1]), calcTip(bill[2])];
 
 console.log(bill, tip);
 
-
-const billMeal = [125, 555, 44];
-const tip1 = calcTip(bill[0]);
-const tip2 = calcTip(bill[1]);
-const tip3 = calcTip(bill[2]);
-
-
-console.log(tip1, tip2, tip3);
+// unsing without tip array
+// const billMeal = [125, 555, 44];
+// const tip1 = calcTip(bill[0]);
+// const tip2 = calcTip(bill[1]);
+// const tip3 = calcTip(bill[2]);
+// console.log(tip1, tip2, tip3);
 
 //  Bonus 
 const total = [bill[0] + tip[0], bill[1] + tip[1], bill[2] + tip[2]]
 console.log(total);
+
+
+//  Objects
+
+// const travisArray = [
+//     'traivs',
+//     'tybor',
+//     2037 - 1980,
+//     'student',
+//     ['Michael', 'Peter', 'Steven']
+// ];
+
+
+
+const travis = {
+    firstName: 'Travis',
+    lastName:'Tybor',
+    age: 2037 -1980,
+    friends: ['Michael', 'Peter', 'Steven'],
+    job: 'student'
+}
+
+console.log(travis);
+
+console.log(travis.lastName);
+console.log(travis['lastName']);
+
+const nameKey = 'Name';
+console.log(travis['first' + nameKey]);
+console.log(travis['last' + nameKey]);
+
+const interestedIn = prompt('what do you want to know about Travis? Choose between firstName, lastName, age, job, and friends ');
+console.log(travis[interestedIn]);
+
+if(travis[interestedIn]){
+    console.log(travis[interestedIn])
+} else {
+    console.log('Wrong request. Choose between firstName, lastName, age, job, and friends ');
+}
+
+//  adding to  an existing object
+travis.location= 'Texas';
+travis['twitter'] = '@travisTweet';
+console.log(travis);
+
+// Challenge
+console.log(`${travis.firstName} has ${travis.friends.length} friends and his best friend is ${travis.friends[0]}`);
+*/
+
+//  Object Methods ===================
+const travis = {
+    firstName: 'Travis',
+    lastName:'Tybor',
+    birthYear: 1980,
+    friends: ['Michael', 'Peter', 'Steven'],
+    job: 'student',
+    hasDriversLicense: true,
+    
+    // calcAge: function(birthYear){
+    //     return 2037 -birthYear;
+    // }
+    // 
+    calcAge: function(){
+       this.age = 2037 - this.birthYear;
+       return this.age
+    },
+
+    getSummary: function(){
+        
+            return `${this.firstName} is a ${this.calcAge()}- year old student,${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license `
+        
+    }
+}
+
+console.log(travis.calcAge(1980));
+console.log(travis.calcAge());
+// console.log(travis['calcAge'](1980));
+console.log(travis.age);
+console.log(travis.getSummary());
+
+//  Sec 3 - Challenge #3
+
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBmi: function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBmi: function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+}
+
+mark.calcBmi();
+john.calcBmi();
+console.log(mark.bmi, john.bmi);
+
+if(mark.bmi > john.bmi){
+    console.log(`${mark.fullName}'s BMI at ${mark.bmi} is bigger than ${john.fullName}'s BMI of ${john.bmi}`)
+} else if (john.bmi > mark.bmi){
+console.log(`${john.fullName}'s BMI at ${john.bmi} is bigger than ${mark.fullName}'s BMI of ${mark.bmi}`)}
 
 
