@@ -152,7 +152,7 @@ console.log(scoreDolphin, scoreKoala);
 checkWinner(scoreDolphin, scoreKoala);
 
 
-// Arrays
+// Arrays ================================================
 
 const friends = ["Michael", "Steven", "Peter"];
 console.log(friends);
@@ -176,7 +176,7 @@ const travis = [firstName, "Tybor", 2022 - 1980, friends];
 console.log(travis);
 console.log(travis.length);
 
-// array exercise
+// array exercise ===================================
 const calcAge = function (birthYear) {
   return 2037 - birthYear;
 };
@@ -190,7 +190,7 @@ console.log(age1, age2, age3);
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
 console.log(ages);
 
-//  Basic ARRAY Methods
+//  Basic ARRAY Methods ===============================
 
 const friends = ["Michael", "Steven", "Peter"];
 
@@ -231,7 +231,7 @@ if(friends.includes('Steven')){
     console.log('you have a friend named Steven');
 }
 
-// Sec 2 - Challenge 2
+// Sec 2 - Challenge 2 =====================================
 
 const calcTip = function(bill) {
      return bill >= 50 && bill <= 300 ? bill *0.25 : bill * .2
@@ -256,7 +256,7 @@ const total = [bill[0] + tip[0], bill[1] + tip[1], bill[2] + tip[2]]
 console.log(total);
 
 
-//  Objects
+//  Objects =================================================
 
 // const travisArray = [
 //     'traivs',
@@ -301,7 +301,7 @@ console.log(travis);
 
 // Challenge
 console.log(`${travis.firstName} has ${travis.friends.length} friends and his best friend is ${travis.friends[0]}`);
-*/
+
 
 //  Object Methods ===================
 const travis = {
@@ -366,3 +366,112 @@ if(mark.bmi > john.bmi){
 console.log(`${john.fullName}'s BMI at ${john.bmi} is bigger than ${mark.fullName}'s BMI of ${mark.bmi}`)}
 
 
+// Iteration - For Loop  ====================================
+
+for(let rep = 1; rep <= 10; rep ++){
+    console.log(`Lifting weights repetition ${rep} 🏋🏽`)
+}
+
+for(let rep = 1; rep <= 30; rep ++){
+    console.log(`Lifting weights repetition ${rep} 🏋🏽`)
+}
+
+//  Looping Array, Breaking and Continuing ==================
+
+const travisArray = [
+    'traivs',
+    'tybor',
+    2037 - 1980,
+    'student',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = [];
+
+for(let i = 0; i < travisArray.length; i++){
+    //  reading from travisArray
+    console.log(travisArray[i], typeof travisArray[i])
+
+    // Filling an Array
+    // types[i] = typeof travisArray[i];
+
+    // adding to Array
+    types.push(typeof travisArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages  = [];
+
+for(let i = 0; i < years.length; i++){
+    ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+//  Continue and Break
+console.log('---- Only STRINGS')
+for(let i = 0; i < travisArray.length; i++){
+    if(typeof travisArray[i] !== 'string') continue;
+
+    console.log(travisArray[i], typeof travisArray[i])
+}
+
+
+console.log('---- Break at NUM in Array')
+for(let i = 0; i < travisArray.length; i++){
+    if(typeof travisArray[i] === 'number') break;
+
+    console.log(travisArray[i], typeof travisArray[i])
+}
+
+
+//  Looping backwards through array =================
+const travisArray = [
+    'traivs',
+    'tybor',
+    2037 - 1980,
+    'student',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+for(let i = travisArray.length - 1; i >= 0; i-- ){
+    console.log(i, travisArray[i]);
+}
+
+// Loop in a Loop  ========================================
+//  log exercise 1,2,3
+
+for( let exercise = 1; exercise <=3; exercise++ ){
+    console.log(`======= Start Exercise ${exercise}`)
+
+    // 5 repitions per exercise
+    for(let rep = 1; rep < 6; rep++){
+        console.log(`Exercise ${exercise} Lifting weight repitition ${rep} 🏋🏽`)
+    }
+}
+*/
+
+//  WHILE Loops  ============================================
+
+// for(let rep = 1; rep < 10; rep++){
+//     console.log(`forLoop Lifting weight repitition ${rep} 🏋🏽`)
+// } 
+
+let rep = 1;
+while(rep <= 10){
+//  console.log(`WhileLoop Lifting weight repitition ${rep} 🏋🏽`)
+ rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6){
+    console.log(`you rolled ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) console.log(`you rolled a ${dice} ! , loop ends`)
+
+}
