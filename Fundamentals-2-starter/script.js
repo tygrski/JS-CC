@@ -459,53 +459,50 @@ for( let exercise = 1; exercise <=3; exercise++ ){
 
 // for(let rep = 1; rep < 10; rep++){
 //     console.log(`forLoop Lifting weight repitition ${rep} 🏋🏽`)
-// } 
+// }
 
 let rep = 1;
-while(rep <= 10){
-//  console.log(`WhileLoop Lifting weight repitition ${rep} 🏋🏽`)
- rep++;
+while (rep <= 10) {
+  //  console.log(`WhileLoop Lifting weight repitition ${rep} 🏋🏽`)
+  rep++;
 }
 
 let dice = Math.trunc(Math.random() * 6) + 1;
 
-while (dice !== 6){
-    console.log(`you rolled ${dice}`);
-    dice = Math.trunc(Math.random() * 6) + 1;
-    if(dice === 6) console.log(`you rolled a ${dice} ! , loop ends`)
-
+while (dice !== 6) {
+  console.log(`you rolled ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`you rolled a ${dice} ! , loop ends`);
 }
 
 //  Sec 3 Challenge #4
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86,52];
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 const tips = [];
 const totals = [];
 
-
-const calcTip = function(bills) {
-    return bills >= 50 && bills <= 300 ? bills *0.15 : bills * .2
-    }
-for(let i =0; i < bills.length; i++){
-    const tipAmmount = calcTip(bills[i]);
-    tips.push(tipAmmount);
-    totals.push(tipAmmount + bills[i]);
+const calcTip = function (bills) {
+  return bills >= 50 && bills <= 300 ? bills * 0.15 : bills * 0.2;
+};
+for (let i = 0; i < bills.length; i++) {
+  const tipAmmount = calcTip(bills[i]);
+  tips.push(tipAmmount);
+  totals.push(tipAmmount + bills[i]);
 }
 console.log(bills, tips, totals);
 
+const calcAverage = function (arr) {
+  // use let because sum will change as we loop the arr
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  console.log(sum);
+  return sum / arr.length;
+};
 
-const calcAverage = function(arr) {
-    // use let because sum will change as we loop the arr
-    let sum = 0;
-    for (let i =0; i < arr.length; i++){
-        sum += arr[i];
-    }
-    console.log(sum);
-    return sum / arr.length;
-}
-
-// 
+//
 console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
-
+console.log('11');
