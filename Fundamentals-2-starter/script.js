@@ -453,7 +453,7 @@ for( let exercise = 1; exercise <=3; exercise++ ){
         console.log(`Exercise ${exercise} Lifting weight repitition ${rep} 🏋🏽`)
     }
 }
-*/
+
 
 //  WHILE Loops  ============================================
 
@@ -505,4 +505,116 @@ const calcAverage = function (arr) {
 console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
-console.log('11');
+
+
+//  Given an arr of tempd of one day, calculate the temp amplitude. Keep in mind that sometimes there may be a sensor error
+
+const tempatures = [3, -2, -1, 'error', 9, 13, 17, 15, -6, 14, 9, 5];
+
+//=== Understand the problem ===============
+// 1) what is temp amp ? Ans, difference btw highest and    lowest temp. Value we return from function
+// 2) How to compute max and min value in arr(tempatures) ?
+// 3) what a sensor error and what to do when it occurs ?
+
+//=== Break up into small sub-problems ======================
+// 1) How to ignore sensor error
+// 2) Find the max value in temp array
+// 3) FInd minimum value
+// 4) Subtract min from max and return it
+
+//  Prob 2 , function to recieve 2 temp arrays
+//  should we use same funciton twice ? NO , easiest to merge 2 arrays into 1
+//  How to merge 2 arrays
+
+const calcTempAmplitude = function(temps){
+    
+    let max = temps[0];
+    let min = temps[0];
+    
+    for(let i = 0; i < temps.length; i++){
+        const curTemp = temps[i];
+    //  continue if temp is a not a num value
+        if(typeof curTemp !== 'number') continue;
+        if(curTemp > max) max = curTemp;
+        if(curTemp < min) min = curTemp;
+    };
+    console.log(max, min);
+    return max - min;
+}
+calcTempAmplitude([3, 7, 4, 1, 8]);
+const amplitude = calcTempAmplitude(tempatures);
+console.log(amplitude);
+
+//  with 2 arrays
+
+const calcTempAmplitudeNew = function(t1, t2){
+    const temps = t1.concat(t2);
+    console.log(temps);
+    
+    let max = temps[0];
+    let min = temps[0];
+    
+    for(let i = 0; i < temps.length; i++){
+        const curTemp = temps[i];
+    //  continue if temp is a not a num value
+        if(typeof curTemp !== 'number') continue;
+        if(curTemp > max) max = curTemp;
+        if(curTemp < min) min = curTemp;
+    };
+    console.log(max, min);
+    return max - min;
+}
+const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
+
+console.log(amplitudeNew);
+*/
+// Debugging ==================================
+
+const measureKelvin = function(){
+    const measurement = {
+        type: 'temp',
+        unit: 'celcius',
+
+        //  Fix Str to Num
+        // value: Number(prompt('Degree Celcius')),
+        value: 10
+    }
+console.log(measurement);
+console.table(measurement)
+
+    console.log(measurement.value); // correct value
+    // console.warn(measurement.value); 
+    // console.error(measurement.value); 
+   
+    const kelvin = measurement.value + 273;
+    return kelvin;
+}
+// Identify bug
+console.log(measureKelvin()); 
+
+// Biggre Bug
+
+const calcTempAmplitudeNewBug = function(t1, t2){
+    const temps = t1.concat(t2);
+    console.log(temps);
+    
+    let max = 0;
+    let min = 0;
+    // bug above because 0 < 1, 1 is the lowest temp
+    // creates bug here: if(curTemp < min) min = curTemp;
+    
+    for(let i = 0; i < temps.length; i++){
+        const curTemp = temps[i];
+    //  continue if temp is a not a num value
+        if(typeof curTemp !== 'number') continue;
+
+        debugger;
+        if(curTemp > max) max = curTemp;
+        if(curTemp < min) min = curTemp;
+    };
+    console.log(max, min);
+    return max - min;
+}
+const amplitudeNewBug = calcTempAmplitudeNewBug([3, 5, 1], [9, 4, 5]);
+
+console.log(amplitudeNewBug);
