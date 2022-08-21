@@ -38,12 +38,23 @@ if (avgPop > indiaPop) {
 } else if (indiaPop > avgPop) {
   console.log(`India's population is above average`);
 }
-console.log('9' - '5');
+
+//  str - str = num
+// num - str = num
+// str - num = num
+//  num + str = str
+//  str + str = str
+// str + num = str
+
+
+console.log('9' - '8');
 console.log(9 - '5');
+console.log('5' - 2);
 console.log(9 + '5');
+console.log('11' + 3);
 console.log('9' + '5');
 console.log('19' - '13' + '17');
-console.log('19' - '13' + 17);
+console.log('19' - '17' + 17);
 console.log('58' < 57);
 console.log(3 + 7 + '6' + 1);
 console.log(3 + 7 + '6' - 1);
