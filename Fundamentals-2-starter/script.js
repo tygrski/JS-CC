@@ -618,4 +618,30 @@ const calcTempAmplitudeNewBug = function(t1, t2){
 const amplitudeNewBug = calcTempAmplitudeNewBug([3, 5, 1], [9, 4, 5]);
 
 console.log(amplitudeNewBug);
+
 */
+
+//  Challenge 4
+
+
+const temps1 = [17, 21, 23];
+const temps2 = [12, 5, -5, 4];
+
+function printForecast(tempature){
+   const tempStr = tempature.map(num => {
+    return String(num);
+   });
+   console.log(tempStr)
+};
+
+printForecast(temps1);
+
+
+const testArr = [10, 20, 30];
+
+function fakeTest(arr){
+    const fakeRes = arr.toString()
+    console.log(fakeRes)
+}
+
+fakeTest(testArr);

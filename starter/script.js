@@ -384,7 +384,7 @@ if(day === 'monday'){
     console.log('not a valid day')
 } 
 
-*/
+
 
 //  Statements and Expessions
 // expression produce a value
@@ -429,4 +429,5 @@ console.log(` I like to drink ${drink}`);
 // const bill = 430;
 const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 console.log(`the bill was ${bill}, the tip was ${tip}, the total was ${bill + tip}`);
+*/
 
