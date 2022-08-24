@@ -619,7 +619,7 @@ const amplitudeNewBug = calcTempAmplitudeNewBug([3, 5, 1], [9, 4, 5]);
 
 console.log(amplitudeNewBug);
 
-*/
+
 
 //  Challenge 4
 
@@ -663,3 +663,4 @@ const printTemps = function(arr){
 }
 
 printTemps(data1)
+*/
