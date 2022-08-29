@@ -203,7 +203,7 @@ const describePopulation = function (country, population) {
 
 describePopulation('USA', 332);
 
-*/
+
 
 // Intro to Array
 
@@ -236,4 +236,24 @@ for (var i = 0; i < listOfNeighbours.length; i++) {
   }
 }
 
+*/
+
+// Basic Array Operations (Methods)
+
+const usaNeighbors = ['canada', 'mexico', 'russia'];
+
+usaNeighbors.push('Utopia');
+console.log(usaNeighbors.indexOf('mexico')); 
+console.log(usaNeighbors.indexOf('Utopia')); 
+
+// usaNeighbors.unshift('Utopia');
+console.log(usaNeighbors);
+usaNeighbors.pop('Utopia');
+console.log(usaNeighbors);
+console.log(usaNeighbors.includes('germany')); 
+console.log(usaNeighbors.includes('canada')); 
+console.log(usaNeighbors.indexOf('canada')); 
+console.log(usaNeighbors.indexOf('russia')); 
+usaNeighbors.splice(2,1,'sweden');
+console.log(usaNeighbors);
 
