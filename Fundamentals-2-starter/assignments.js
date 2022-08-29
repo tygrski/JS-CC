@@ -236,14 +236,14 @@ for (var i = 0; i < listOfNeighbours.length; i++) {
   }
 }
 
-*/
 
+ */
 // Basic Array Operations (Methods)
 
-const usaNeighbors = ['canada', 'mexico', 'russia'];
+let usaNeighbors = ['Canada', 'Mexico', 'Russia'];
 
 usaNeighbors.push('Utopia');
-console.log(usaNeighbors.indexOf('mexico')); 
+console.log(usaNeighbors.indexOf('Mexico')); 
 console.log(usaNeighbors.indexOf('Utopia')); 
 
 // usaNeighbors.unshift('Utopia');
@@ -251,9 +251,42 @@ console.log(usaNeighbors);
 usaNeighbors.pop('Utopia');
 console.log(usaNeighbors);
 console.log(usaNeighbors.includes('germany')); 
-console.log(usaNeighbors.includes('canada')); 
-console.log(usaNeighbors.indexOf('canada')); 
-console.log(usaNeighbors.indexOf('russia')); 
-usaNeighbors.splice(2,1,'sweden');
+console.log(usaNeighbors.includes('Canada')); 
+console.log(usaNeighbors.indexOf('Canada')); 
+console.log(usaNeighbors.indexOf('Russia')); 
+if(!usaNeighbors.includes('Sweden')){
+  console.log('sweden not found');
+} else{
+  console.log('sweden is here');
+}
+usaNeighbors.splice(2,1,'Sweden');
 console.log(usaNeighbors);
+
+usaNeighbors[usaNeighbors.indexOf('Sweden')] = 'Kingdom of Sweden';
+
+console.log(usaNeighbors);
+usaNeighbors.push('Kingdom of Sweden');
+console.log(usaNeighbors);
+usaNeighbors[usaNeighbors.indexOf('Kingdom of Sweden')] = 'finland'
+console.log(usaNeighbors);
+usaNeighbors.push('Kingdom of Sweden');
+console.log(usaNeighbors);
+usaNeighbors.splice(2,2,'Finland');
+console.log(usaNeighbors);
+
+
+
+
+
+// Objects
+
+letCountry = {
+  country: 'USA',
+  language: 'English',
+  population: 300000000,
+  neighbors: ['canada', 'mexico']
+};
+
+
+
 
