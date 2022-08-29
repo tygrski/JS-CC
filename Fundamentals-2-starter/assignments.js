@@ -237,7 +237,7 @@ for (var i = 0; i < listOfNeighbours.length; i++) {
 }
 
 
- */
+
 // Basic Array Operations (Methods)
 
 let usaNeighbors = ['Canada', 'Mexico', 'Russia'];
@@ -276,17 +276,27 @@ console.log(usaNeighbors);
 
 
 
-
+ */
 
 // Objects
 
-letCountry = {
-  country: 'USA',
+let country = {
+  name: 'USA',
   language: 'English',
-  population: 300000000,
-  neighbors: ['canada', 'mexico']
+  population: 300,
+  neighbors: ['canada', 'mexico'],
+  capitol: 'Washington, DC'
 };
 
+//  Dot vs. Bracket Notation
+
+console.log(`${country.name} has ${country.population} million ${country.language} speaking prople and ${country.neighbors.length} neighbors and it's capitol is ${country.capitol}.`)
+
+country.population += 2;
+console.log(country.population);
+
+country['population'] -= 1;
+console.log(country.population);
 
 
 
