@@ -188,19 +188,52 @@ describePopulation('USA', 332);
 //  console.log(percentages);
 
 
-*/
 
 
-const describePopulation = function (country, population) {
-  function percentageOfWOrld1(population) {
-    let percentage = (population / 7900) * 100;
-    console.log(percentage);
-    return percentage;
-  }
-  percentageOfWOrld1();
-  const description = `${country} has ${population} million 
-  people, which is about ${percentage}% of the world.`;
-  console.log(description);
+
+const describePopulation = function (country, population) { 
+  // calculate percent of total world population 
+ const percentage = (population / 7900) * 100;
+
+
+  const description = `${country} has ${population} million people, which is about ${percentage} % of the world.`;
+
+  console.log(description); 
 };
 
 describePopulation('USA', 332);
+
+*/
+
+// Intro to Array
+
+const populations = [300, 200, 150];
+console.log(populations.length === 3);
+
+function percentageOfWOrld1(populations) {
+  return (populations / 7900) * 100;
+}
+
+const percentages = [
+  percentageOfWOrld1(populations[0]),
+  percentageOfWOrld1(populations[1]),
+  percentageOfWOrld1(populations[2]),
+];
+
+console.log(percentages);
+
+// Looping Backwards and Loops in Loops
+const listOfNeighbours = [
+  ['Canada', 'Mexico'],
+  ['Spain'],
+  ['Norway', 'Sweden', 'Russia'],
+];
+
+for (var i = 0; i < listOfNeighbours.length; i++) {
+  for (var j = 0; j < listOfNeighbours[i].length; j++) {
+    console.log('lop2');
+    console.log(listOfNeighbours[i][j]);
+  }
+}
+
+
