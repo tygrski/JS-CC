@@ -276,7 +276,7 @@ console.log(usaNeighbors);
 
 
 
- */
+
 
 // Objects
 
@@ -285,8 +285,9 @@ let country = {
   language: 'English',
   population: 300,
   neighbors: ['canada', 'mexico'],
-  capitol: 'Washington, DC'
+  capitol: 'Washington, DC',
 };
+
 
 //  Dot vs. Bracket Notation
 
@@ -298,5 +299,30 @@ console.log(country.population);
 country['population'] -= 1;
 console.log(country.population);
 
+ */
+// Object Methods
+let country = {
+  name: 'USA',
+  language: 'English',
+  population: 300,
+  neighbors: ['canada', 'mexico'],
+  capitol: 'Washington, DC',
+  describe: function(){
+    console.log(`${this.name} has ${this.population} million pople that speak ${this.language} and has ${this.neighbors.length} neighboring countries and a capitol called ${this.capitol}`);
+  },
+  checkIsland: function(){
+    this.isIsland = this.neighbors.length === 0 ? true : false;
+    console.log(this.isIsland);
+  }
+};
+country.describe();
+country.checkIsland();
+console.log(country);
 
 
+
+// Iteration: The for Loop
+
+for(let voter = 1; voter <= 50; voter++){
+  console.log(`Voter number ${voter} is voting`);
+}
