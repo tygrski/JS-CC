@@ -35,7 +35,7 @@ function calcAge(birthYear){
 const firstName ='Travis';
 calcAge(1990);
 
-*/
+
 
 // Hoisting
 
@@ -85,3 +85,41 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+
+*/
+
+//  THIS keyword
+console.log(this);
+
+const calcAge = function (birthyear) {
+  console.log(2022 - birthyear);
+  console.log(this);
+};
+
+calcAge(1980);
+
+const calcAgArrow = birthyear => {
+  console.log(2022 - birthyear);
+  console.log(this);
+};
+calcAgArrow(1980);
+
+const Travis = {
+  year: 1980,
+  calcAge: function () {
+    console.log(this);
+    console.log(2022 - this.year);
+  },
+};
+
+Travis.calcAge();
+
+const matilda = {
+    year: 1984,
+}
+matilda.calcAge = Travis.calcAge;
+matilda.calcAge();
+
+const f = Travis.calcAge;
+// THIS will be undefined as on line 99undefined because f is not an object
+f();
