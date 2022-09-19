@@ -86,7 +86,7 @@ console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
 
-*/
+
 
 //  THIS keyword
 console.log(this);
@@ -123,3 +123,76 @@ matilda.calcAge();
 const f = Travis.calcAge;
 // THIS will be undefined as on line 99undefined because f is not an object
 f();
+
+*/
+
+//  Arrow function vs Regular
+
+// var firstName = 'matilda'
+
+// const travis = {
+//   firstName: 'Travis',
+//   year: 1980,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2022 - this.year);
+//   },
+
+//   // arrow below prevents this from being the object
+//   greeet: () => {
+//     console.log(this);
+//     console.log(`hey ${this.firstNameme}`)},
+// };
+
+// travis.greeet();
+// console.log(this);
+// console.log(this.firstName);
+
+
+const travis = {
+  firstName: 'Travis',
+  year: 1990,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2022 - this.year);
+    // solotion 1
+    // make var and set to this, so 'this' won't be undefined
+    // const self = this;
+    // const isMillenial = function(){
+    //   console.log(self);
+    //   console.log(self.year  >= 1981 && self.year <= 1996 );
+    // };
+
+    //  solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year  >= 1981 && this.year <= 1996 );
+    };
+
+
+
+    isMillenial();
+  },
+
+  
+
+  // arrow below prevents this from being the object
+  greeet: () => {
+    console.log(this);
+    console.log(`hey ${this.firstNameme}`)},
+};
+ travis.greeet();
+ travis.calcAge();
+
+
+//  argument keyword, only available in regular funcitons
+const addExp = function (a, b) {
+  console.log(arguments);
+  return a + b;
+}
+addExp(2, 5);
+addExp(2, 5, 8, 12);
+const addArrow = (a,b) => {
+  console.log(arguments);
+   return a +b
+  };
