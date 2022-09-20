@@ -124,7 +124,7 @@ const f = Travis.calcAge;
 // THIS will be undefined as on line 99undefined because f is not an object
 f();
 
-*/
+
 
 //  Arrow function vs Regular
 
@@ -196,3 +196,66 @@ const addArrow = (a,b) => {
   console.log(arguments);
    return a +b
   };
+
+
+
+  // Primitives vs Objects( Reference Types)
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Travis',
+  age: 30
+}
+
+const friend = me;
+friend.age = 27;
+console.log('Friend', friend);
+console.log('Me', me);
+  */
+
+// primitive vs objets
+
+//  primitive
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+//  reference type
+const jessica = {
+  firstName: "Jessica",
+  lastName: 'Williams',
+  age: 27,
+}
+
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('before marriage', jessica);
+console.log('after marriage', marriedJessica);
+
+// below will not work, it points to new location of memory in the heap. 
+// marriedJessica = {}
+
+//  Copying Objects
+const jessica2 = {
+  firstName: "Jessica",
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob']
+};
+//  copies the object properties to jess2
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis'
+console.log('before marriage', jessica2);
+console.log('after marriage', jessicaCopy);
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John');
+console.log('before marriage', jessica2);
+console.log('after marriage', jessicaCopy);
