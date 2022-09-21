@@ -216,7 +216,7 @@ const friend = me;
 friend.age = 27;
 console.log('Friend', friend);
 console.log('Me', me);
-  */
+
 
 // primitive vs objets
 
@@ -259,3 +259,15 @@ jessicaCopy.family.push('Mary');
 jessicaCopy.family.push('John');
 console.log('before marriage', jessica2);
 console.log('after marriage', jessicaCopy);
+
+  */
+
+//  data d\structures and operators
+
+const restaurant = {
+  name: 'Classic Itslliano',
+  location: 'Viva Angelo Tivanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzaria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruchetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu:['Pizza', 'Pasta', 'Risotto'], 
+};
