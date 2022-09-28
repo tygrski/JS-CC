@@ -42,61 +42,103 @@ const restaurant = {
 
   orderPasta: function (ing1, ing2, ing3){
     console.log(`Here is yoour pasta order with ${ing1}, ${ing2}, and ${ing3}`);
+  },
+  orderPizza: function(mainIngredient, ...otherIngredients){
+    console.log(mainIngredient);
+    console.log(otherIngredients);
   }
 
 };
 
+// Destructuring
+//  Spread , because on Right side of =
+const arr = [1, 2, ...[3,4]];
+
+//  REST , bec on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+// takes all elements of menu array and put into new arr
+ const [pizza, ,rizotto, ...otherfood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+ console.log(pizza, rizotto, otherfood);
+
+ //  REST for Objects
+//  to only get weekdays, make two obj. but only use the weekdays
+ const {sat, ...weekDays} = restaurant.openingHours;
+ console.log(weekDays);
+
+//   Functions with Rest Parameter
+const add = function(...numbers) {
+  console.log(numbers);
+  let sum = 0;
+  for(let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2,3 );
+add(5, 3, 7, 2);
+add(5, 3, 7, 2, 8, 9, 13);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('basil', 'onion', 'olives', 'bacon');
+restaurant.orderPizza('cheese');
+
+
+
 //  Spread Operator
 
-const arr = [7, 8, 9];
-// adding to array
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// const arr = [7, 8, 9];
+// // adding to array
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-// Adds the arr into otherArr, but new arr is internally seperate
-const otherArr = [5, arr];
-console.log(otherArr);
-//  Addding with SPREAD OPERATOR, merges the arrays into 1 var
-const newArr = [1, 2, ...arr];
-console.log(newArr);
-console.log(...newArr);
+// // Adds the arr into otherArr, but new arr is internally seperate
+// const otherArr = [5, arr];
+// console.log(otherArr);
+// //  Addding with SPREAD OPERATOR, merges the arrays into 1 var
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+// console.log(...newArr);
 
-//  Create new menu, adding old and new item
-const newMenu = [...restaurant.mainMenu, "Gnocci"];
-console.log(newMenu);
+// //  Create new menu, adding old and new item
+// const newMenu = [...restaurant.mainMenu, "Gnocci"];
+// console.log(newMenu);
 
-//  Making shallow copy array and merge
-const mainMenuCopy = [...restaurant.mainMenu]
-console.log(mainMenuCopy);
-//  Join the array above
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// //  Making shallow copy array and merge
+// const mainMenuCopy = [...restaurant.mainMenu]
+// console.log(mainMenuCopy);
+// //  Join the array above
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
-//  Iterables: arrays, strings, maps and sets. NOT Objects
-const str = 'Travis'
-const lettres = [...str,' ','M', 'T' ];
-console.log(lettres);
-console.log(...str);
+// //  Iterables: arrays, strings, maps and sets. NOT Objects
+// const str = 'Travis'
+// const lettres = [...str,' ','M', 'T' ];
+// console.log(lettres);
+// console.log(...str);
 
-const ingredients = [
-  // prompt("Let's make pasta! ingriendent 1 ?"),
-  // prompt('ingriendent  2'),
-  // prompt('ingriendent  3')
-];
-console.log(ingredients);
+// const ingredients = [
+//   // prompt("Let's make pasta! ingriendent 1 ?"),
+//   // prompt('ingriendent  2'),
+//   // prompt('ingriendent  3')
+// ];
+// console.log(ingredients);
 
-restaurant.orderPasta(ingredients[0], ingredients[1],ingredients[2]);
+// restaurant.orderPasta(ingredients[0], ingredients[1],ingredients[2]);
 
-restaurant.orderPasta(...ingredients);
+// restaurant.orderPasta(...ingredients);
 
-//  Objests
-const newRestaurant = {foundedYear: '1998', ...restaurant, founder: "Romeo"};
-console.log(newRestaurant);
+// //  Objests
+// const newRestaurant = {foundedYear: '1998', ...restaurant, founder: "Romeo"};
+// console.log(newRestaurant);
 
-const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'Riotorante';
-console.log(restaurant.name);
-console.log(restaurantCopy.name);
+// const restaurantCopy = {...restaurant};
+// restaurantCopy.name = 'Riotorante';
+// console.log(restaurant.name);
+// console.log(restaurantCopy.name);
+
+
 
 // restaurant.orderDelivery({
 //   time: '22:30',
