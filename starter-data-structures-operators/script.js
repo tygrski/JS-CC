@@ -49,6 +49,56 @@ const restaurant = {
   }
 };
 
+// ========================================================
+// LOGICAL ASSIGNMENT OPERATORS
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'Capri',
+  owner: 'Gio Rossi',
+};
+
+// OR assignments operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+//  Nullish assignment operator ( null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// && resturn first falsy value
+// rest2.owner = rest2.owner && '<ANNONYMOUS>';
+// rest1.owner = rest1.owner && '<ANNONYMOUS>';
+// similar as above with Logical operator
+rest1.owner &&= '<ANNONYMOUS>'
+rest2.owner &&= '<ANNONYMOUS>'
+
+console.log(rest1);
+console.log(rest2);
+
+
+// ===============================================
+//  short circuting method
+//  restaurant.numGuests = 0;
+
+//  similar to terany but  shorter
+const guests = restaurant.numGuests  || 10;
+console.log(guests);
+
+//  Nullish Coalesing Operator method
+//  Nullish values are null or undefined, not 0 or ''
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
+/*
+==============================================================
 //  ShortCut && and ||
 
 //  Can use any data type, return any data type, short circuting 
@@ -82,6 +132,9 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('mushroom', 'spinach')
 };
 restaurant.orderPizza && restaurant.orderPizza('cheese', 'bacon');
+=================================================================
+*/
+
 
 // =============================================
 // // REST PATTERN AND PARAMETERS
