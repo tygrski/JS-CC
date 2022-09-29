@@ -47,42 +47,77 @@ const restaurant = {
     console.log(mainIngredient);
     console.log(otherIngredients);
   }
-
 };
 
-// Destructuring
-//  Spread , because on Right side of =
-const arr = [1, 2, ...[3,4]];
+//  ShortCut && and ||
 
-//  REST , bec on LEFT side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+//  Can use any data type, return any data type, short circuting 
+console.log(3 || 'Travis'); 
+console.log('' || 'Travis'); 
+console.log(true || 'Travis'); 
+console.log(undefined || null); 
+console.log(undefined || 0 || '' || 'Hello' || 23);
+// below both are false, nothing will be logged in the console
+console.log(undefined || "" || 0 ); 
+console.log(undefined || "" || 0 || 'Hello'); 
 
-// takes all elements of menu array and put into new arr
- const [pizza, ,rizotto, ...otherfood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
- console.log(pizza, rizotto, otherfood);
+// restaurant.numGuests not defined yet, will be 10
+// restaurant.numGuests = 77;
+// terany operation
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+ restaurant.numGuests = 22;
+//  similar to terany but  shorter
+const guests2 = restaurant.numGuests  || 10;
+console.log(guests2);
 
- //  REST for Objects
-//  to only get weekdays, make two obj. but only use the weekdays
- const {sat, ...weekDays} = restaurant.openingHours;
- console.log(weekDays);
+console.log('----- AND  ------');
+console.log(0 && 'Travis');
+console.log(7 && 'Travis');
 
-//   Functions with Rest Parameter
-const add = function(...numbers) {
-  console.log(numbers);
-  let sum = 0;
-  for(let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
+console.log("hello" && 23 && null && 'travis');
+
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach')
 };
-add(2,3 );
-add(5, 3, 7, 2);
-add(5, 3, 7, 2, 8, 9, 13);
+restaurant.orderPizza && restaurant.orderPizza('cheese', 'bacon');
 
-const x = [23, 5, 7];
-add(...x);
+// =============================================
+// // REST PATTERN AND PARAMETERS
+// // Destructuring
+// //  Spread , because on Right side  of =
+// const arr = [1, 2, ...[3,4]];
 
-restaurant.orderPizza('basil', 'onion', 'olives', 'bacon');
-restaurant.orderPizza('cheese');
+// //  REST , bec on LEFT side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+
+// // takes all elements of menu array and put into new arr
+//  const [pizza, ,rizotto, ...otherfood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+//  console.log(pizza, rizotto, otherfood);
+
+//  //  REST for Objects
+// //  to only get weekdays, make two obj. but only use the weekdays
+//  const {sat, ...weekDays} = restaurant.openingHours;
+//  console.log(weekDays);
+
+// //   Functions with Rest Parameter
+// const add = function(...numbers) {
+//   console.log(numbers);
+//   let sum = 0;
+//   for(let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2,3 );
+// add(5, 3, 7, 2);
+// add(5, 3, 7, 2, 8, 9, 13);
+
+// const x = [23, 5, 7];
+// add(...x);
+
+// restaurant.orderPizza('basil', 'onion', 'olives', 'bacon');
+// restaurant.orderPizza('cheese');
 
 
 
