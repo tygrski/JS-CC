@@ -42,6 +42,10 @@ const game = {
   },
   };
 
+
+/////////////////////////////////////////////////////
+/*
+
 //  Challnege 2
 //   1. Loop over the game.scored array and print each player name to the console, 
 // along with the goal number (Example: "Goal 1: Lewandowski")
@@ -73,8 +77,8 @@ for (const [team,odd]of Object.entries(game.odds)){
   const teamStr = team  === "x" ? 'draw' : `victory ${game[team]}`
   console.log(`Odd of ${teamStr} ${odd}`);
 }
-
-
+*/
+////////////////////////////////////////////////////
 
 // for (const entry of game.scored.entries()) {
 //   console.log(entry);
@@ -187,7 +191,51 @@ const restaurant = {
   }
 };
 
-//////////////////////////////////////////////////////////////
+////////////////////////////////////////////////
+//   SETS Data Structure
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza'
+]);
+
+console.log(ordersSet);
+console.log(new Set('Traivs'));
+
+// check number of items, no repeats
+console.log(ordersSet.size);
+// does set have
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+//  add item
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+
+
+console.log(ordersSet);
+
+for (const order of ordersSet) (console.log(order));
+// ordersSet.clear();
+// console.log(ordersSet);
+
+//  Example, arr without duplicates
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manger', 'Chef', 'Waiter'];
+
+// const staffUnique = new Set(staff);
+
+//  change set to array, taked elements out of set and into array with no duplicates
+const  staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+//  returns how many unique positions there are 
+console.log(new Set( ['Waiter', 'Chef', 'Waiter', 'Manger', 'Chef', 'Waiter']).size);
+console.log(new Set('travis').size);
+
+////////////////////////////////////////////////////////////
 
 
 /*
