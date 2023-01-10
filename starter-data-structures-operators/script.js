@@ -234,6 +234,45 @@ console.log(staffUnique);
 //  returns how many unique positions there are 
 console.log(new Set( ['Waiter', 'Chef', 'Waiter', 'Manger', 'Chef', 'Waiter']).size);
 console.log(new Set('travis').size);
+console.log('-------------');
+
+///////////////////////////////////////////////////
+//  MAPS data struct mapped to keys //////////
+//  Key and value are called [ENTRIES]
+
+const  rest = new Map();
+//  add elements aka entries
+//  set method returns updated map
+rest .set('name', 'Classy Italy Food');
+rest .set(1, 'Naples, Italy');
+console.log(rest);
+// chains added new city  to cl at same time
+console.log(rest .set(2, 'Lisbon, Portugal'));
+
+//  set categories as the key and value as array of categor
+rest
+  .set('categories',
+  ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open!')
+  .set(false, 'we are closed')
+console.log(rest);
+console.log(rest.get('name'));
+console.log(rest.get(1));
+console.log(rest.get(2));
+console.log(rest.get(true));
+
+// open
+// const time = 21;
+// closed
+const time = 8; 
+
+// both comparisson are true and false value, the return will be mapped to  the true or false sets and string value
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+
+
 
 ////////////////////////////////////////////////////////////
 
