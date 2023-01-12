@@ -237,7 +237,7 @@ console.log(new Set('travis').size);
 console.log('-------------');
 
 ///////////////////////////////////////////////////
-//  MAPS data struct mapped to keys //////////
+//  MAPS data structure mapped to keys //////////
 //  Key and value are called [ENTRIES]
 
 const  rest = new Map();
@@ -271,12 +271,24 @@ const time = 8;
 // both comparisson are true and false value, the return will be mapped to  the true or false sets and string value
 console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
+// see if rest map has categories
+console.log(rest.has('categories'));
+// delete a location
+rest.delete(2);
+
+// clear all key/values
+// rest.clear();
+
+const arr = [1, 2];
+rest.set(arr, 'test')
+rest.set(document.querySelector('h1'), 'Heading')
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
 
 
 
 ////////////////////////////////////////////////////////////
-
-
 /*
 //  LOOPING OBJECTS  ////////////////////////
 
