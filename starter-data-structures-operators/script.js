@@ -191,6 +191,7 @@ const restaurant = {
   }
 };
 
+/*
 // Maps iteration
 
 const question = new Map([
@@ -230,7 +231,45 @@ console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
 
+*/ 
+
+const mySet1 = new Set();
+
+
+mySet1.add(1); // at value 1
+mySet1.add(5);
+// adding 5 again does nothing, sets can onlny has unique values
+mySet1.add(5); // at value position 2
+mySet1.add('some text'); // at value position 3
+
+const o = {a: 1, b: 2}
+mySet1.add(o); // is  at value 4
+
+// since o is a different object it points top diffenent the key/values, below are ok, even if values are the same, it pints to different memory
+mySet1.add({a: 1, b: 2}); // at value 5
+
+console.log(mySet1);
+//  see if set has a value , not checking for position
+console.log(mySet1.has(1));
+console.log(mySet1.has(3));
+console.log(mySet1.has(5));
+console.log(mySet1.has(Math.sqrt(25)));  // true because we added num 5
+console.log(mySet1.has('SOME Text'.toLocaleLowerCase()));  
+console.log(mySet1.has(o));  
+console.log(mySet1.size);  // size 5
+
+mySet1.delete(5);
+console.log(mySet1.size) //size 4
+console.log(mySet1.has(5)); // false , we deleted 5
+
+mySet1.add(6);
+console.log(mySet1);
+
+
+
+
 /*
+
 ////////////////////////////////////////////////
 //   SETS Data Structure
 
@@ -277,6 +316,8 @@ console.log(new Set('travis').size);
 console.log('-------------');
 
 ///////////////////////////////////////////////////
+
+
 //  MAPS data structure mapped to keys //////////
 //  Key and value are called [ENTRIES]
 
